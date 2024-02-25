@@ -4,11 +4,13 @@ package com.youneskarir.springbootjpaonetomanycrud.modal;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Builder
 @AllArgsConstructor
+@Data
 @NoArgsConstructor
 @Table(name = "tutorial")
 public class Tutorial {
@@ -20,16 +22,16 @@ public class Tutorial {
     )
     @SequenceGenerator(
             sequenceName = "tutorial_sequence",
-            name = "tutorial_id",
+            name = "tutorial_sequence",
             allocationSize = 1
     )
     @Column(name = "tutorial_id")
-    private String id;
-    @Column(name = "comment_title")
+    private Long id;
+    @Column(name = "Tutorial_title")
     private String Title;
-    @Column(name = "comment_description")
+    @Column(name = "Tutorial_description")
     private String description;
-    @Column(name = "comment_published")
+    @Column(name = "Tutorial_published")
     private boolean published;
 
 
