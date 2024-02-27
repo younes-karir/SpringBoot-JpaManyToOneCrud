@@ -41,9 +41,43 @@ public class CommentController {
         return ResponseHandler.responseBuilder(
                 "tutorial comments list",
                 HttpStatus.OK,
-                commentService.getTutorialAll(id)
+                commentService.getTutorialAllComments(id)
         );
     }
+
+    @PutMapping("/comments/{id}")
+    public ResponseEntity<Object> updateComment
+            (@PathVariable Long id,@RequestBody @Valid CommentRequest commentRequest){
+
+        return ResponseHandler.responseBuilder(
+                "comment has been updated",
+                HttpStatus.OK,
+                commentService.updateComment(id,commentRequest)
+        );
+    }
+
+
+    @DeleteMapping("/comments/{id}")
+    public ResponseEntity<Object> deleteComment(@PathVariable Long id)
+    {
+        return ResponseHandler.responseBuilder(
+                "comment deleted",
+                HttpStatus.OK,
+                commentService.deleteComment(id)
+        );
+    }
+
+
+    @DeleteMapping("/tutorials/{id}/comments")
+    public ResponseEntity<Object> createComment(@PathVariable Long id){
+        commentService.deleteTutorialAllComments(id);
+        return ResponseHandler.responseBuilder(
+                "Comment has been created",
+                HttpStatus.CREATED,
+               null
+        );
+    }
+
 
 
 

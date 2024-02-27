@@ -11,5 +11,6 @@ public interface CommentService {
     Comment getComment(Long id);
     Comment deleteComment(Long id);
     Comment updateComment(Long commentId,CommentRequest CommentRequest);
-    List<Comment> getTutorialAll(Long tutorialId);
+    List<Comment> getTutorialAllComments(Long tutorialId);
+    void deleteTutorialAllComments(Long tutorialId);
 }

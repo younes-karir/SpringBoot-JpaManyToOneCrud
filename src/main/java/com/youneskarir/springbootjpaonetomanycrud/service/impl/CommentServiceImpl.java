@@ -44,16 +44,25 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public Comment updateComment( Long commentId, CommentRequest CommentRequest) {
+
         Comment comment = Comment.builder()
                 .id(commentId)
                 .content(CommentRequest.getContent())
+                .tutorial(commentRepository.findById(commentId).get().getTutorial())
                 .build();
         return commentRepository.save(comment);
     }
 
 
     @Override
-    public List<Comment> getTutorialAll(Long tutorialId) {
+    public List<Comment> getTutorialAllComments(Long tutorialId) {
         return commentRepository.findAllByTutorialId(tutorialId);
     }
+
+    @Override
+    public void deleteTutorialAllComments(Long tutorialId) {
+         commentRepository.deleteAllByTutorial_Id(tutorialId);
+    }
+
+
 }
