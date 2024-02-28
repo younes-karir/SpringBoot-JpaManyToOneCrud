@@ -73,7 +73,7 @@ public class CommentController {
         commentService.deleteTutorialAllComments(id);
         return ResponseHandler.responseBuilder(
                 "Comment has been created",
-                HttpStatus.CREATED,
+                HttpStatus.OK,
                null
         );
     }
