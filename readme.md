@@ -1,9 +1,8 @@
+## *Model* :
+![Alt text](screens/1.png)
 
-*MODEL* :
 
-![](C:\Users\younes\IdeaProjects\SpringBoot-JPAOneToMany-crud\screens\1.png)
-
-*APIs* :
+## *APIs* :
 
 
 - Create new tutorial (`POST /tutorials`): This API allows clients to create a new tutorial. The tutorial data is sent in the request body, and it is saved to the database using JPA.
