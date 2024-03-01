@@ -1,3 +1,6 @@
+*Structure* :
+![](C:\Users\younes\IdeaProjects\SpringBoot-JPAOneToMany-crud\screens\1.png)
+
 *APIs* :
 create new tutorial                         :``POST /tutorials``
 retrieve a tutorial by id                   :``GET  /tutorials/:id``
